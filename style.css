@@ -844,6 +844,13 @@ h6 {
     margin-top: 3rem;
 }
 
+.info-grid.single-item {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .info-card {
     background-color: var(--color-dark);
     color: var(--color-light-gray);
