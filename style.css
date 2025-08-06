@@ -14,6 +14,8 @@
     /* Voor 'Bijna vol' badge */
     --color-new: #38b2ac;
     /* Voor 'Nieuw' badge */
+    --color-powerwalk: #319795;
+    --color-bootcamp: #3182ce;
     --font-primary: 'Poppins', sans-serif;
     --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
     --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
@@ -905,7 +907,124 @@ h6 {
     margin: 0 auto 2rem auto;
 }
 
-/* Responsive aanpassingen voor subpagina's */
+/* ---- STIJLEN VOOR ROOSTERPAGINA ---- */
+.schedule-wrapper {
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.schedule-header {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    background-color: var(--color-light-gray);
+    font-weight: 600;
+}
+
+.schedule-day-name {
+    padding: 1rem;
+    text-align: center;
+    border-right: 1px solid var(--color-border);
+}
+
+.schedule-day-name:last-child {
+    border-right: none;
+}
+
+.schedule-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.schedule-day {
+    border-right: 1px solid var(--color-border);
+    min-height: 200px;
+    padding: 1rem;
+}
+
+.schedule-day:last-child {
+    border-right: none;
+}
+
+.schedule-item {
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    color: var(--color-light);
+    position: relative;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.schedule-item:hover {
+    transform: scale(1.03);
+    box-shadow: var(--shadow-sm);
+}
+
+.item-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.item-time {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.item-title {
+    display: block;
+    font-weight: 500;
+}
+
+.item-location {
+    display: block;
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-top: 0.5rem;
+}
+
+.item-powerwalk {
+    background-color: var(--color-powerwalk);
+}
+
+.item-bootcamp {
+    background-color: var(--color-bootcamp);
+}
+
+.legend {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+}
+
+.legend-item::before {
+    content: '';
+    width: 15px;
+    height: 15px;
+    border-radius: 4px;
+    margin-right: 8px;
+}
+
+.legend-item.item-powerwalk::before {
+    background-color: var(--color-powerwalk);
+}
+
+.legend-item.item-bootcamp::before {
+    background-color: var(--color-bootcamp);
+}
+
+/* Responsive aanpassingen */
 @media (max-width: 900px) {
     .content-grid {
         grid-template-columns: 1fr;
@@ -913,5 +1032,20 @@ h6 {
 
     .sidebar-widget {
         position: static;
+    }
+
+    .schedule-header,
+    .schedule-grid {
+        display: block;
+    }
+
+    .schedule-day {
+        border-right: none;
+        border-bottom: 1px solid var(--color-border);
+    }
+
+    .schedule-day-name {
+        border-bottom: 1px solid var(--color-border);
+        border-right: none;
     }
 }
