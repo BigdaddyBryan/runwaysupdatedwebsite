@@ -16,6 +16,8 @@
     /* Voor 'Nieuw' badge */
     --color-powerwalk: #319795;
     --color-bootcamp: #3182ce;
+    --color-kettlebell: #dd6b20;
+    /* Oranje voor kettlebell */
     --font-primary: 'Poppins', sans-serif;
     --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
     --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
@@ -1002,9 +1004,14 @@ h6 {
     background-color: var(--color-bootcamp);
 }
 
+.item-kettlebell {
+    background-color: var(--color-kettlebell);
+}
+
 .legend {
     margin-top: 2rem;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 1.5rem;
@@ -1030,6 +1037,11 @@ h6 {
 .legend-item.item-bootcamp::before {
     background-color: var(--color-bootcamp);
 }
+
+.legend-item.item-kettlebell::before {
+    background-color: var(--color-kettlebell);
+}
+
 
 /* Responsive aanpassingen */
 @media (max-width: 900px) {
